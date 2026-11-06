@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/objects/projectile.gd" id="root"]
+
+[sub_resource type="CircleShape2D" id="shape"]
+radius = 6.0
+
+[node name="PlayerShot" type="Area2D"]
+script = ExtResource("root")
+collision_layer = 8
+collision_mask = 5
+speed = 620.0
+lifetime = 1.2
+animation = "shot_player"
+impact_color = Color(0.45, 0.94, 0.97, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("shape")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]

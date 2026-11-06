@@ -1,0 +1,49 @@
+; Engine configuration file.
+; Circuito Perdido — Projeto Prático P2 (Desenvolvimento de Jogos Digitais)
+
+config_version=5
+
+[application]
+
+config/name="Circuito Perdido"
+config/description="Plataforma 2D: ajude o robô VOLT a recuperar os núcleos de energia da fábrica."
+run/main_scene="res://scenes/main/Splash.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
+boot_splash/bg_color=Color(0.101961, 0.109804, 0.172549, 1)
+boot_splash/show_image=false
+config/icon="res://icon.png"
+
+[autoload]
+
+SaveManager="*res://scripts/autoload/save_manager.gd"
+AudioManager="*res://scripts/autoload/audio_manager.gd"
+GameManager="*res://scripts/autoload/game_manager.gd"
+SceneLoader="*res://scripts/autoload/scene_loader.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep"
+
+[layer_names]
+
+2d_physics/layer_1="mundo"
+2d_physics/layer_2="jogador"
+2d_physics/layer_3="inimigos"
+2d_physics/layer_4="tiro_jogador"
+2d_physics/layer_5="tiro_inimigo"
+2d_physics/layer_6="coletaveis"
+2d_physics/layer_7="perigos"
+
+[physics]
+
+common/physics_ticks_per_second=60
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.101961, 0.109804, 0.172549, 1)

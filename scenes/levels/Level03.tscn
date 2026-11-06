@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/levels/level_03.gd" id="root"]
+
+[node name="Level03" type="Node2D"]
+script = ExtResource("root")
+level_title = "Fase 3 — Reator"
+level_subtitle = "As luzes caíram... algo se move no escuro"
+music = "reactor"
+dark = true
+sky_top = Color(0.05, 0.05, 0.09, 1)
+sky_bottom = Color(0.364706, 0.152941, 0.364706, 1)

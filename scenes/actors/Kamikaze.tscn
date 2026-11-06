@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/components/hurtbox.gd" id="hurtbox"]
+[ext_resource type="Script" path="res://scripts/components/hitbox.gd" id="hitbox"]
+[ext_resource type="Script" path="res://scripts/components/health_component.gd" id="health"]
+[ext_resource type="Script" path="res://scripts/actors/kamikaze.gd" id="root"]
+
+[sub_resource type="CircleShape2D" id="body"]
+radius = 10.0
+
+[sub_resource type="CircleShape2D" id="hurt"]
+radius = 13.0
+
+[sub_resource type="CircleShape2D" id="hit"]
+radius = 11.0
+
+[node name="Kamikaze" type="CharacterBody2D"]
+script = ExtResource("root")
+z_index = 4
+collision_layer = 4
+collision_mask = 1
+score_value = 60
+use_gravity = false
+motion_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0)
+shape = SubResource("body")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+
+[node name="Hurtbox" type="Area2D" parent="."]
+script = ExtResource("hurtbox")
+collision_layer = 4
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, 0)
+shape = SubResource("hurt")
+
+[node name="Hitbox" type="Area2D" parent="."]
+script = ExtResource("hitbox")
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, 0)
+shape = SubResource("hit")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("health")
+max_health = 1

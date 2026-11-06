@@ -1,0 +1,20 @@
+# Godot 4
+.godot/
+*.translation
+.mono/
+data_*/
+mono_crash.*.json
+
+# Builds (entregar separado em .zip)
+export/
+*.exe
+*.pck
+
+# Editor / sistema
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Build exportada
+build/
